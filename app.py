@@ -208,10 +208,8 @@ nama_pubchem = {
     "Asam asetat": "Acetic acid",
     # dst.
 }
-
 nama_dicari = nama_pubchem.get(row["Nama"], row["Nama"])
 img_url = get_pubchem_image_url(nama_dicari)
-
 
     st.markdown(f"[🔗 Lihat di PubChem](https://pubchem.ncbi.nlm.nih.gov/#query={nama_url})", unsafe_allow_html=True)
 
