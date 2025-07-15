@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 import base64
-
 # Mapping jenis bahaya ke nama ikon (dari file lokal atau URL)
 def get_hazard_symbol(bahaya):
     if "karsinogen" in bahaya.lower():
@@ -19,7 +18,6 @@ def get_hazard_symbol(bahaya):
         return "☢️"  # Simbol biohazard / toksik
     else:
         return "❓"
-
 
 st.set_page_config(page_title="Senyawa Kimia Organik Berbahaya", layout="centered")
 st.title("🧪 Daftar Senyawa Kimia Organik Berbahaya")
@@ -188,7 +186,7 @@ if pilih:
 # Gambar struktur otomatis dari PubChem
     nama_url = pilih.lower().replace(" ", "%20")
     img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
-    st.image(img_url, caption=f"Struktur molekul {pilih}", width=500)
+    st.image(img_url, caption=f"Struktur molekul {pilih}", width=300)
 if not pilih.startswith("Senyawa "):  # hanya tampilkan gambar jika nama bukan dummy
     nama_url = pilih.lower().replace(" ", "%20")
     img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
