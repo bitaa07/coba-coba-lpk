@@ -58,7 +58,7 @@ senyawa_list = [
     ("Furan", "C4H4O", "Sangat mudah terbakar, karsinogen", "Tinggi", "Tangani di lemari asam", "Sintesis organik"),("Asam sulfonat", "R‑SO3H", "Korosif kuat, luka bakar", "Tinggi", "APD lengkap", "Surfaktan & sintesis organik"),
     ("Nitrit acid", "HNO3", "Oksidator kuat, korosif", "Tinggi", "Tangani di lemari asam", "Pembuatan pupuk & peledak"),
     ("Picric acid", "C6H2(NO2)3OH", "Peledak & racun", "Tinggi", "Tangani sangat hati-hati", "Reagen kimia"),
-    (""Chloroacetic acid", "C2H3ClO2", "Toksik, luka bakar", "Tinggi", "APD lengkap", "Sintesis farmasi & herbisida"),
+    ("Chloroacetic acid", "C2H3ClO2", "Toksik, luka bakar", "Tinggi", "APD lengkap", "Sintesis farmasi & herbisida"),
     ("Chloral hydrate", "C2H3Cl3O2", "Sedatif, toksik SSP", "Tinggi", "Ventilasi baik", "Obat penenang (dulu)"),
     ("Propionic acid", "C3H6O2", "Iritasi kulit/mata", "Sedang", "Pelindung kulit & mata", "Pengawet makanan"),
     ("Nitroethane", "C2H5NO2", "Mudah terbakar & toksik", "Tinggi", "Ventilasi baik", "Pelarut & bahan peledak"),
