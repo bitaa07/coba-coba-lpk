@@ -23,14 +23,9 @@ def get_hazard_symbol(bahaya):
 
 st.set_page_config(page_title="Senyawa Kimia Organik Berbahaya", layout="centered")
 st.title("🧪 Daftar Senyawa Kimia Organik Berbahaya")
-st.markdown(f"""
-    ## 🧪 {row['Senyawa']}
-    - **Rumus Molekul:** {row['Rumus Molekul']}
-    - **Bahaya:** {row['Bahaya']}
-    - **Keparahan:** :red[{row['Keparahan']}]
-    - **Penanganan:** {row['Penanganan']}
-    - **Manfaat Umum:** {row['Manfaat']}
-    """)
+st.markdown("""
+Aplikasi ini menyajikan daftar **150 senyawa kimia organik berbahaya** lengkap dengan **rumus molekul**, **jenis bahaya**, **cara penanganan**, **manfaat**, **keparahan** ,dan **struktur molekul otomatis dari PubChem**.
+""")
 
 # Data utama hingga 150 senyawa
 senyawa_list = [
