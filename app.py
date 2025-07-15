@@ -185,18 +185,33 @@ if pilih:
     - **Manfaat Umum:** {row['Manfaat']}
     """)
 
-    # Gambar struktur otomatis dari PubChem
+# Gambar struktur otomatis dari PubChem
     nama_url = pilih.lower().replace(" ", "%20")
     img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
     st.image(img_url, caption=f"Struktur molekul {pilih}", width=500)
+if not pilih.startswith("Senyawa "):  # hanya tampilkan gambar jika nama bukan dummy
+    nama_url = pilih.lower().replace(" ", "%20")
+    img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
+    st.image(img_url, caption=f"Struktur molekul {pilih}", width=300)
+    st.markdown(f"[🔗 Lihat di PubChem](https://pubchem.ncbi.nlm.nih.gov/#query={nama_url})", unsafe_allow_html=True)
+else:
+    st.warning("Tidak tersedia struktur untuk senyawa ini.")
+    
+import requests
+def pubchem_image_url(nama):
+    nama_url = nama.lower().replace(" ", "%20")
+    img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
+    if requests.get(img_url).status_code == 200:
+        return img_url
+    return None
 
     st.markdown(f"[🔗 Lihat di PubChem](https://pubchem.ncbi.nlm.nih.gov/#query={nama_url})", unsafe_allow_html=True)
 
 # Tabel ringkasan
 with st.expander("📊 Lihat Tabel Data Lengkap"):
-    st.dataframe(filtered_df, use_container_width=True)
+     st.dataframe(filtered_df, use_container_width=True)
 with st.expander("📘 Legenda Simbol Bahaya"):
-    st.markdown("""
+     st.markdown("""
     - ☠️ = Karsinogen / Sangat toksik  
     - ⚠️ = Iritasi atau bahaya sedang  
     - 🔥 = Mudah terbakar  
