@@ -169,7 +169,7 @@ if pilih:
     # Gambar struktur otomatis dari PubChem
     nama_url = pilih.lower().replace(" ", "%20")
     img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{nama_url}/PNG"
-    st.image(img_url, caption=f"Struktur molekul {pilih}", width=300)
+    st.image(img_url, caption=f"Struktur molekul {pilih}", width=500)
 
     st.markdown(f"[🔗 Lihat di PubChem](https://pubchem.ncbi.nlm.nih.gov/#query={nama_url})", unsafe_allow_html=True)
 
