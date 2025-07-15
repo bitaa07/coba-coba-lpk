@@ -29,7 +29,7 @@ Aplikasi ini menyajikan daftar **150 senyawa kimia organik berbahaya** lengkap d
 senyawa_list = [
     ("Benzena", "C6H6", "Karsinogen, mudah menguap", "Tinggi", "Gunakan sarung tangan dan masker, ventilasi baik", "Pelarut industri, bahan baku plastik"),
     ("Formaldehida", "CH2O", "Iritasi mata dan saluran napas, toksik", "Tinggi", "Gunakan APD, hindari paparan langsung", "Pengawet biologis, bahan resin"),
-    ("Aseton", "C3H6O", "Mudah terbakar, iritasi", "Sedang", "Jauhkan dari api, gunakan ventilasi", "Pelarut cat dan pembersih kuku"),
+    ("Aceton", "C3H6O", "Mudah terbakar, iritasi", "Sedang", "Jauhkan dari api, gunakan ventilasi", "Pelarut cat dan pembersih kuku"),
     ("Toluena", "C7H8", "Kerusakan saraf pusat", "Tinggi", "Hindari inhalasi, gunakan pelindung mata", "Pelarut industri, bahan baku TDI"),
     ("Etil Asetat", "C4H8O2", "Iritasi kulit dan mata, mudah terbakar", "Sedang", "Simpan dalam wadah tertutup, APD diperlukan", "Pelarut cat dan tinta"),
     ("Metanol", "CH3OH", "Beracun jika tertelan atau terhirup", "Tinggi", "Gunakan di ruang terbuka, APD wajib", "Bahan bakar, pelarut"),
@@ -200,16 +200,6 @@ def pubchem_image_url(nama):
     if requests.get(img_url).status_code == 200:
         return img_url
     return None
-
-nama_pubchem = {
-    "Aseton": "Acetone",
-    "Etanol": "Ethanol",
-    "Asam format": "Formic acid",
-    "Asam asetat": "Acetic acid",
-    # dst.
-}
-nama_dicari = nama_pubchem.get(row["Nama"], row["Nama"])
-img_url = get_pubchem_image_url(nama_dicari)
 
     st.markdown(f"[🔗 Lihat di PubChem](https://pubchem.ncbi.nlm.nih.gov/#query={nama_url})", unsafe_allow_html=True)
 
