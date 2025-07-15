@@ -24,7 +24,7 @@ def get_hazard_symbol(bahaya):
 st.set_page_config(page_title="Senyawa Kimia Organik Berbahaya", layout="centered")
 st.title("🧪 Daftar Senyawa Kimia Organik Berbahaya")
 st.markdown(f"""
-    - **Nama Senyawa:** {row['Nama Senyawa']}
+    - **Nama Senyawa:** {row['Senyawa']}
     - **Rumus Molekul:** {row['Rumus Molekul']}
     - **Bahaya:** {get_hazard_symbol(row['Bahaya'])} {row['Bahaya']}
     - **Keparahan:** :red[{row['Keparahan']}]
