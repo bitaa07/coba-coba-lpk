@@ -1,12 +1,37 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
+import base64
+
+# Mapping jenis bahaya ke nama ikon (dari file lokal atau URL)
+def get_hazard_symbol(bahaya):
+    if "karsinogen" in bahaya.lower():
+        return "☠️"  # Simbol tengkorak
+    elif "iritasi" in bahaya.lower():
+        return "⚠️"  # Simbol tanda peringatan
+    elif "mudah terbakar" in bahaya.lower():
+        return "🔥"  # Simbol api
+    elif "peledak" in bahaya.lower():
+        return "💥"  # Simbol ledakan
+    elif "korosif" in bahaya.lower():
+        return "🧪"  # Simbol cairan korosif
+    elif "neurotoksin" in bahaya.lower() or "toksik" in bahaya.lower():
+        return "☢️"  # Simbol biohazard / toksik
+    else:
+        return "❓"
+
 
 st.set_page_config(page_title="Senyawa Kimia Organik Berbahaya", layout="centered")
 st.title("🧪 Daftar Senyawa Kimia Organik Berbahaya")
 
-st.markdown("""
-Aplikasi ini memuat informasi berbagai **senyawa kimia organik berbahaya**, jenis bahayanya, cara penanganan aman, struktur molekul otomatis dari **PubChem**, beserta **rumus molekul** dan **manfaat umum**.
-""")
+    st.markdown(f"""
+    ## 🧪 {row['Senyawa']}
+    - **Rumus Molekul:** {row['Rumus Molekul']}
+    - **Bahaya:** {get_hazard_symbol(row['Bahaya'])} {row['Bahaya']}
+    - **Keparahan:** :red[{row['Keparahan']}]
+    - **Penanganan:** {row['Penanganan']}
+    - **Manfaat Umum:** {row['Manfaat']}
+    """)
 
 # Data utama hingga 150 senyawa
 senyawa_list = [
@@ -176,6 +201,16 @@ if pilih:
 # Tabel ringkasan
 with st.expander("📊 Lihat Tabel Data Lengkap"):
     st.dataframe(filtered_df, use_container_width=True)
+with st.expander("📘 Legenda Simbol Bahaya"):
+    st.markdown("""
+    - ☠️ = Karsinogen / Sangat toksik  
+    - ⚠️ = Iritasi atau bahaya sedang  
+    - 🔥 = Mudah terbakar  
+    - 💥 = Peledak  
+    - 🧪 = Korosif  
+    - ☢️ = Neurotoksik / Toksik tinggi  
+    - ❓ = Bahaya tidak diketahui  
+    """)
 
 st.markdown("---")
 st.caption("Dibuat oleh **Kelompok 7 - Kelas 1D** · 2025")
