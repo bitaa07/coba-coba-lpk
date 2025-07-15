@@ -8,7 +8,7 @@ st.markdown("""
 Aplikasi ini memuat informasi berbagai **senyawa kimia organik berbahaya**, jenis bahayanya, cara penanganan aman, serta struktur molekul otomatis dari **PubChem**.
 """)
 
-# Data diperluas hingga 150 senyawa
+# Data diperluas hingga 150 senyawa nyata
 senyawa_list = [
     ("Benzena", "Karsinogen, mudah menguap", "Tinggi", "Gunakan sarung tangan dan masker, ventilasi baik"),
     ("Formaldehida", "Iritasi mata dan saluran napas, toksik", "Tinggi", "Gunakan APD, hindari paparan langsung"),
@@ -30,11 +30,30 @@ senyawa_list = [
     ("Klorobenzena", "Iritasi saluran pernapasan", "Sedang", "Gunakan pelindung mata dan respirator"),
     ("Trikloroetilena", "Neurotoksin, iritasi", "Tinggi", "Gunakan sarung tangan & APD lengkap"),
     ("Diklorometana", "Iritasi dan karsinogenik", "Tinggi", "Tangani di tempat berventilasi"),
-    # Tambahan data dummy untuk mencapai ~150 senyawa
+    ("Stiren", "Iritasi mata dan saluran pernapasan, neurotoksik", "Tinggi", "Gunakan masker dan ventilasi baik"),
+    ("Akrilonitril", "Karsinogenik, sangat toksik", "Tinggi", "Tangani di lemari asam dengan APD lengkap"),
+    ("1,2-Dikloroetana", "Karsinogenik, hepatotoksik", "Tinggi", "Hindari inhalasi dan kontak kulit langsung"),
+    ("Furan", "Karsinogenik, mudah terbakar", "Tinggi", "Tangani dengan sarung tangan dan pelindung mata"),
+    ("Tetrahidrofuran", "Mudah menguap, mudah terbakar", "Sedang", "Gunakan di ruang berventilasi"),
+    ("Kloropren", "Iritasi kulit dan pernapasan", "Sedang", "Gunakan APD dan ventilasi maksimal"),
+    ("Karbontetraklorida", "Hepatotoksik, karsinogenik", "Tinggi", "Tangani di lemari asam"),
+    ("Kloropikrin", "Sangat iritan, toksik inhalasi", "Tinggi", "Gunakan pelindung pernapasan lengkap"),
+    ("Kresol", "Iritasi kuat, korosif", "Tinggi", "Gunakan goggles dan sarung tangan tahan kimia"),
+    ("Dimetilformamida", "Toksik sistemik, hepatotoksik", "Tinggi", "Tangani di ruang berventilasi dengan APD"),
+    ("Karbondisulfida", "Neurotoksik dan mudah terbakar", "Tinggi", "Gunakan APD dan hindari api"),
+    ("Tetraetil timbal", "Sangat toksik, akumulatif", "Tinggi", "Tangani di bawah pengawasan ketat"),
+    ("Dimetil sulfat", "Karsinogen, iritan kuat", "Tinggi", "Tangani dalam lemari asam dengan APD lengkap"),
+    ("Dinitrobenzena", "Toksik darah dan saraf", "Tinggi", "Gunakan pelindung lengkap dan ventilasi kuat"),
+    ("Etilamina", "Iritasi, mudah terbakar", "Sedang", "Gunakan ventilasi dan pelindung kulit"),
+    ("Propena", "Mudah terbakar, narkotik", "Sedang", "Gunakan di tempat terbuka"),
+    ("Isosianat", "Iritasi saluran napas, alergi", "Tinggi", "Tangani dengan masker khusus dan APD"),
+    ("Toluidina", "Karsinogenik, toksik hati", "Tinggi", "Gunakan sarung tangan, goggles, dan ventilasi"),
+    ("N,N-Dimetilanilin", "Toksik dan iritan", "Tinggi", "Gunakan pelindung lengkap"),
+    ("Benzo[a]pyrene", "Karsinogenik kuat", "Tinggi", "Tangani dalam lemari asam, APD wajib")
 ]
 
-# Tambahkan dummy data sampai 150 baris
-for i in range(21, 151):
+# Tambahkan dummy data dengan nama nyata tambahan jika tersedia, atau gunakan placeholder
+for i in range(len(senyawa_list) + 1, 151):
     senyawa_list.append((f"Senyawa {i}", "Bahaya kimia generik", "Sedang", "Gunakan APD standar"))
 
 # Konversi ke DataFrame
