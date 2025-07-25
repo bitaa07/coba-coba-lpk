@@ -206,7 +206,7 @@ def pubchem_image_url(nama):
 # Tabel ringkasan
 with st.expander("📊 Lihat Tabel Data Lengkap"):
      st.dataframe(filtered_df, use_container_width=True)
-with st.expander("📘 Legenda Simbol Bahaya"):
+with st.expander("📘 Simbol Bahaya"):
      st.markdown("""
     - ☠️ = Karsinogen / Sangat toksik  
     - ⚠️ = Iritasi atau bahaya sedang  
